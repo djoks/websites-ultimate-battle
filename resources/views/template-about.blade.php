@@ -36,15 +36,15 @@
   <section>
     <div class="container stp-30">
       <div class="flex justify-between items-center gap-6 w-full relative z-10 max-[450px]:flex-col max-[450px]:text-center">
-        <p class="uppercase font-bold display-3">{{ get_field('about_story_title') ?: 'Our Story' }}</p>
+        <p class="uppercase font-bold display-3">{{ \App\cf_get('about_story_title') ?: 'Our Story' }}</p>
         <p class="text-base xl:text-lg max-w-[636px]">
-          {{ get_field('about_story_text') ?: 'Ultimate Battle was born from a passion for competitive gaming and a vision to grow the esports ecosystem in Ghana and across Africa. Through organized tournaments, live broadcasts, and community-driven gaming events, we provide a competitive environment for gamers while delivering exciting entertainment for audiences and brand partners. The platform operates within the PlayProvince Esports ecosystem.' }}
+          {{ \App\cf_get('about_story_text') ?: 'Ultimate Battle was born from a passion for competitive gaming and a vision to grow the esports ecosystem in Ghana and across Africa. Through organized tournaments, live broadcasts, and community-driven gaming events, we provide a competitive environment for gamers while delivering exciting entertainment for audiences and brand partners. The platform operates within the PlayProvince Esports ecosystem.' }}
         </p>
       </div>
       <div class="stp-15">
         <div class="h-[250px] sm:h-[300px] lg:h-[460px] overflow-hidden border border-g600 rounded-2xl flex justify-center items-center relative">
           <div class="absolute inset-0 bg-g900/30 z-10"></div>
-          <img src="{{ get_template_directory_uri() }}/public/images/video-bg.png" alt="" class="object-cover absolute inset-0 h-full w-full" />
+          <img src="{{ \App\cf_image_url(\App\cf_get('about_story_image')) ?: get_template_directory_uri() . '/public/images/video-bg.png' }}" alt="" class="object-cover absolute inset-0 h-full w-full" />
         </div>
       </div>
     </div>
@@ -56,12 +56,12 @@
     <div class="container">
       <div class="flex justify-center items-center flex-col">
         <div class="flex justify-start items-center gap-3">
-          <p class="text-lg font-medium text-g300 uppercase">{{ get_field('about_roadmap_label') ?: 'Roadmap' }}</p>
+          <p class="text-lg font-medium text-g300 uppercase">{{ \App\cf_get('about_roadmap_label') ?: 'Roadmap' }}</p>
           <img src="{{ get_template_directory_uri() }}/public/images/section-title-icon.png" alt="" />
         </div>
-        <h2 class="display-4 uppercase pt-4">{{ get_field('about_roadmap_title') ?: 'Our Journey' }}</h2>
+        <h2 class="display-4 uppercase pt-4">{{ \App\cf_get('about_roadmap_title') ?: 'Our Journey' }}</h2>
       </div>
-      @php $phases = get_field('about_roadmap_phases'); @endphp
+      @php $phases = \App\cf_get('about_roadmap_phases'); @endphp
       <div class="stp-15 grid grid-cols-12 gap-6">
         @if($phases)
           @foreach($phases as $phase)

@@ -35,12 +35,12 @@
     <div class="container">
       <div class="flex justify-center items-center flex-col">
         <div class="flex justify-start items-center gap-3">
-          <p class="text-lg font-medium text-g300 uppercase">{{ get_field('bc_section_label') ?: 'Content' }}</p>
+          <p class="text-lg font-medium text-g300 uppercase">{{ \App\cf_get('bc_section_label') ?: 'Content' }}</p>
           <img src="{{ get_template_directory_uri() }}/public/images/section-title-icon.png" alt="" />
         </div>
-        <h2 class="display-4 uppercase pt-4">{{ get_field('bc_section_title') ?: 'Broadcast & Content' }}</h2>
+        <h2 class="display-4 uppercase pt-4">{{ \App\cf_get('bc_section_title') ?: 'Broadcast & Content' }}</h2>
       </div>
-      @php $cards = get_field('bc_cards'); @endphp
+      @php $cards = \App\cf_get('bc_cards'); @endphp
       <div class="stp-15 grid grid-cols-12 gap-6">
         @if($cards)
           @foreach($cards as $card)

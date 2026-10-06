@@ -3,7 +3,7 @@
 >
   <div class="px-6 pt-6 flex justify-between items-center">
     <a href="{{ home_url('/') }}" class="flex justify-start items-center">
-      <img src="{{ get_template_directory_uri() }}/public/images/logo.png" class="h-10 w-auto" alt="Ultimate Battle" />
+      <img src="{{ \App\cf_image_url(\App\cf_option('site_logo')) ?: get_template_directory_uri() . '/public/images/logo.png' }}" class="h-10 w-auto" alt="Ultimate Battle" />
     </a>
     <button class="text-2xl mobile-menu-close">
       <i class="ph ph-x"></i>

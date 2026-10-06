@@ -49,7 +49,7 @@ Application::configure()
 |
 */
 
-collect(['setup', 'filters', 'acf-fields'])
+collect(['setup', 'filters', 'theme-options', 'carbon-fields'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(

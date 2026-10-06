@@ -1,3 +1,8 @@
+@php
+  $contact_label = \App\cf_get('contact_section_label') ?: 'CONTACT / COLLABORATE';
+  $contact_title = \App\cf_get('contact_section_title') ?: "Let's Connect";
+  $contact_shortcode = \App\cf_get('contact_form_shortcode') ?: '[contact-form-7 id="12" title="Contact form 1"]';
+@endphp
 <section class="stp-30 flex justify-center items-center max-md:px-4 relative">
   <div
     class="size-[100vw] lg:size-[400px] rounded-full absolute top-0 left-0 blur-[400px]"
@@ -17,7 +22,7 @@
         data-aos="fade-up"
         data-aos-duration="700"
       >
-        <p class="text-lg font-medium text-g300 uppercase">CONTACT / COLLABORATE</p>
+        <p class="text-lg font-medium text-g300 uppercase">{{ $contact_label }}</p>
         <img src="{{ get_template_directory_uri() }}/public/images/section-title-icon.png" alt="" />
       </div>
       <h2
@@ -25,11 +30,11 @@
         data-aos-duration="700"
         class="display-3 uppercase pt-4"
       >
-        Let's Connect
+        {{ $contact_title }}
       </h2>
     </div>
     <div class="stp-15 sbp-15 relative z-20 max-w-[856px] max-xl:px-3 text-base w-full contact-form-wrapper">
-      {!! do_shortcode('[contact-form-7 id="12" title="Contact form 1"]') !!}
+      {!! do_shortcode($contact_shortcode) !!}
     </div>
   </div>
 </section>

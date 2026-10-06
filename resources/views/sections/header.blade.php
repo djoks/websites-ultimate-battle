@@ -4,7 +4,7 @@
   >
     <div class="relative z-10 overflow-hidden py-3 pl-6 w-[272px]">
       <a href="{{ home_url('/') }}" class="flex justify-start items-center">
-        <img src="{{ get_template_directory_uri() }}/public/images/logo.png" class="h-10 lg:h-14 w-auto" alt="Ultimate Battle" />
+        <img src="{{ \App\cf_image_url(\App\cf_option('site_logo')) ?: get_template_directory_uri() . '/public/images/logo.png' }}" class="h-10 lg:h-14 w-auto" alt="Ultimate Battle" />
       </a>
 
       <div class="absolute left-0 top-0 -z-10 max-lg:hidden">

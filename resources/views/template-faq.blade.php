@@ -34,10 +34,10 @@
 
   <section class="container stp-15">
     <div class="">
-      <h4 class="uppercase heading-4">{{ get_field('faq_still_title') ?: 'STILL HAVE QUESTIONS?' }}</h4>
+      <h4 class="uppercase heading-4">{{ \App\cf_get('faq_still_title') ?: 'STILL HAVE QUESTIONS?' }}</h4>
       <p class="pt-4 text-g60">
         If you didn't find the answer you were looking for, we're here to
-        help. Reach out to us at <a href="mailto:{{ get_field('faq_contact_email') ?: 'info@ultimatebattle.co' }}" class="text-g300">{{ get_field('faq_contact_email') ?: 'info@ultimatebattle.co' }}</a>
+        help. Reach out to us at <a href="mailto:{{ \App\cf_get('faq_contact_email') ?: 'info@ultimatebattle.co' }}" class="text-g300">{{ \App\cf_get('faq_contact_email') ?: 'info@ultimatebattle.co' }}</a>
         or use our <a href="{{ home_url('/contact') }}" class="text-g300">contact form</a>,
         and we'll get back to you as soon as possible. We're building
         Africa's esports future together!
